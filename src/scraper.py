@@ -12,12 +12,21 @@ soup = BeautifulSoup(page.text, "html.parser")
 
 all_collection_dates = soup.find_all("td", class_="CalendarDayStyle")
 
+data = []
+
 for collection_date in all_collection_dates:
   item = {}
 
-  # collection_date is a <td>; read its title attribute directly
   item["Date"] = collection_date.get("title")
-  img = collection_date.find("img")
-  item["Bin colour"] = img.get("title") if img else None
+  imgs = collection_date.find_all("img")
+  item["Bin colour"] = [img.get("title") for img in imgs] if imgs else "No bins due for collection"
+
+  data.append(item)
 
   print(item["Bin colour"])
+  print("-----")
+  print(item["Date"])
+  print("-----")
+
+print(data)
+
