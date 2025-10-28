@@ -4,3 +4,8 @@ Send out notification reminders the day before a bin collection is due that also
 ## Getting started
 
 TBC
+
+pip install -r requirements.txt
+py -m venv venv
+source venv/bin/activate
+
