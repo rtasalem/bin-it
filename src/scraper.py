@@ -18,14 +18,9 @@ for collection_date in all_collection_dates:
 
   item["Date"] = collection_date.get("title")
   imgs = collection_date.find_all("img")
-  item["Bin colour"] = [img.get("title") for img in imgs] if imgs else "No bins due for collection"
+  item["Bin colour"] = [img.get("title").partition(' ')[0] for img in imgs] if imgs else "No bins due for collection"
 
   data.append(item)
-
-  print(item["Bin colour"])
-  print("-----")
-  print(item["Date"])
-  print("-----")
 
 print(data)
 
