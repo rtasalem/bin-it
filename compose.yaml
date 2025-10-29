@@ -1,0 +1,3 @@
+services:
+  bin-it:
+    container_name: bin-it
