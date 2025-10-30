@@ -1,6 +1,10 @@
 FROM python:3.9-slim
+
 WORKDIR /bin-it
-COPY requirements.txt requirements.txt
-RUN pip install -r requirements.txt
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
 COPY . .
-CMD ["python", "src/scraper.py"]
+
+CMD ["python", "src/__main__.py"]
