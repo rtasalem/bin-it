@@ -1,0 +1,18 @@
+services:
+  bin-it:
+    build:
+      context: .
+    container_name: bin-it
+    ports:
+      - '8080:8080'
+    env_file:
+      - .env
+    volumes:
+      - ./src:/bin-it/src
+      - ./requirements.txt:/bin-it/requirements.txt
+    networks:
+      - bin-it
+
+networks:
+  bin-it:
+    driver: bridge
