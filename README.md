@@ -23,7 +23,7 @@ Create a `.env` file that includes the following variables:
 
 | Variable | Required (yes/no) | Description |
 |----------|-------------------|-------------|
-| `UPRN` | Yes | UPRN (or Unique Property Reference Number) is a unique numeric identifier tied to _your_ home address. Bin collection days varies across Glasgow, your UPRN will ensure you get notifications with the correct bin collection dates. |
+|  `UPRN`  |        Yes        | UPRN (or Unique Property Reference Number) is a unique numeric identifier tied to _your_ home address. Bin collection days varies across Glasgow, your UPRN will ensure you get notifications with the correct bin collection dates. |
 
 ## Local development
 
