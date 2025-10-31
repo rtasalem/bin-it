@@ -1,4 +1,5 @@
 import os
+import uuid
 from dotenv import load_dotenv
 import requests
 from bs4 import BeautifulSoup
@@ -17,12 +18,18 @@ def scraper():
   data = []
 
   for collection_date in all_collection_dates:
-    item = {}
-
-    item['Date'] = collection_date.get('title')
+    date = collection_date.get('title')
     imgs = collection_date.find_all('img')
-    item['Bin colour'] = [img.get('title').partition(' ')[0] for img in imgs] if imgs else 'No bins due for collection'
+    bin_colours = [img.get('title').partition(' ')[0] for img in imgs] if imgs else 'No bins due for collection'
 
-    data.append(item)
+    document = {
+      'data': {
+        'id': str(uuid.uuid4()),
+        'date': date,
+        'bin_colours': bin_colours
+      }
+    }
+
+    data.append(document)
 
   return data

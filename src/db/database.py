@@ -1,4 +1,4 @@
-from client import client
+from db.client import client
 
 database = client['bin_it']
 
