@@ -3,7 +3,7 @@ Scrape the [Glasgow City Council Refuse and Recycling Calendar](https://www.glas
 
 💙 Blue - Paper, card, cardboard  
 🤎 Brown - Food and garden waste  
-💚 Green - General non-recyclable household waste
+💚 Green - General non-recyclable household waste  
 🩶 Grey - Plastics, metals, film  
 💜 Purple - Glass  
 
@@ -23,7 +23,9 @@ Create a `.env` file that includes the following variables:
 
 | Variable | Required (yes/no) | Description |
 |----------|-------------------|-------------|
-| `UPRN` | Yes | UPRN (or Unique Property Reference Number) is a unique numeric identifier tied to _your_ home address. Bin collection days varies across Glasgow, your UPRN will ensure you get notifications with the correct bin collection dates. |
+| `UPRN` | Yes | UPRN* (or Unique Property Reference Number) is a unique numeric identifier tied to _your_ home address. Bin collection days varies across Glasgow, your UPRN will ensure you get notifications with the correct bin collection dates. |
+
+*[FindMyAddress](https://www.findmyaddress.co.uk/search) can be used to find out your UPRN.
 
 ## Local development
 
