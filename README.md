@@ -23,8 +23,15 @@ The following environment variables are used by this project for local developme
 |----------|-------------------|-------------|
 | `UPRN`* | Yes | UPRN (or Unique Property Reference Number) is a unique numeric identifier tied to _your_ home address. Bin collection days varies across Glasgow, your UPRN will ensure you get notifications with the correct bin collection dates. |
 | `MONGO_URI` | No | Connection string to enable client to connect to database. |
+| `SMTP_SERVER`** | No | Server definition based on email address being used for `sender` and `recipient`. In this case, it's Gmail. |
+| `SMTP_PORT` | No | Port to bind for `SMTP_SERVER`. |
+| `GMAIL_APP_PASSWORD`*** | Yes| App password that allows to authenticate email sent as automated reminders from this application. |
+| `SENDER_EMAIL_ADDRESS` | Yes | Email address of the sender. |
+| `RECIPIENT_EMAIL_ADDRESS | Yes | Email address of the recipient. |
 
-*[FindMyAddress](https://www.findmyaddress.co.uk/search) can be used to find out your UPRN.
+*[FindMyAddress](https://www.findmyaddress.co.uk/search) can be used to find out your UPRN.  
+**For your own personal use, you should change this if you intend to use the app with a different email provider e.g. Outlook.  
+***Similar to the `SMTP_SERVER`, the app password should be generated from the email provider you intend to use. Typically, 2FA needs to be enabled before generating an app password.
 
 ## Local development
 
