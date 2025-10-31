@@ -8,6 +8,7 @@ def scraper():
 
   uprn = os.getenv('UPRN')
   gcc_url = f'https://onlineservices.glasgow.gov.uk/forms/refuseandrecyclingcalendar/CollectionsCalendar.aspx?UPRN={uprn}'
+
   page = requests.get(gcc_url)
   soup = BeautifulSoup(page.text, 'html.parser')
 
