@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
+from parse_date import parse_date
 
 def scraper():
   load_dotenv()
@@ -20,6 +21,7 @@ def scraper():
 
   for collection_date in all_collection_dates:
     raw_date = collection_date.get('title')
+    parsed_date = parse_date(raw_date)
 
     imgs = collection_date.find_all('img')
     bin_colours = [img.get('title').partition(' ')[0] for img in imgs] if imgs else 'No bins due for collection'
@@ -27,7 +29,7 @@ def scraper():
     item = {
       'data': {
         'id': str(uuid.uuid4()),
-        'date': raw_date,
+        'date': parsed_date,
         'bin_colours': bin_colours
       }
     }
