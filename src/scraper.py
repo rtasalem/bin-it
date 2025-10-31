@@ -1,10 +1,9 @@
 import os
-import uuid
 from dotenv import load_dotenv
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
-from parse_date import parse_date
+from data.parse_date import parse_date
 
 def scraper():
   load_dotenv()
@@ -28,7 +27,6 @@ def scraper():
 
     item = {
       'data': {
-        'id': str(uuid.uuid4()),
         'date': parsed_date,
         'bin_colours': bin_colours
       }
