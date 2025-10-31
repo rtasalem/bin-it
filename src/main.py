@@ -1,4 +1,4 @@
-from db.indexes.bin_collections import set_up_bin_collections_index
+from mongo.indexes.bin_collections import set_up_bin_collections_index
 from data.save_scraped_data import save_scraped_data
 
 def main():

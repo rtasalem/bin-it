@@ -1,5 +1,5 @@
-from db.database import database
-from db.create_index import create_index
+from mongo.database import database
+from mongo.create_index import create_index
 
 def set_up_bin_collections_index():
   collection = database['bin_collections']

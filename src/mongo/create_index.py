@@ -1,4 +1,4 @@
-from db.database import database
+from mongo.database import database
 
 def create_index(collection, params, index_name, unique=False):
   collection.create_index(

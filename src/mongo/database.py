@@ -1,4 +1,4 @@
-from db.client import client
+from mongo.client import client
 
 database = client['bin_it']
 
