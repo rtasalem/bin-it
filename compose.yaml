@@ -5,13 +5,30 @@ services:
     container_name: bin-it
     ports:
       - '8080:8080'
-    env_file:
-      - .env
+    environment:
+      UPRN: ${UPRN}
+      MONGO_URI: mongodb://mongodb:27017/
+    depends_on:
+      mongodb:
+        condition: service_started
     volumes:
       - ./src:/bin-it/src
       - ./requirements.txt:/bin-it/requirements.txt
     networks:
       - bin-it
+
+  mongodb:
+    image: mongo:latest
+    container_name: bin-it-mongo
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongodb-data:/data
+    networks:
+      - bin-it
+
+volumes:
+  mongodb-data:
 
 networks:
   bin-it:
