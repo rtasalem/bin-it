@@ -5,8 +5,9 @@ services:
     container_name: bin-it
     ports:
       - '8080:8080'
-    env_file:
-      - .env
+    environment:
+      UPRN: ${UPRN:-906700048727} # near Glasgow Central Station (no bin collection data available)
+      MONGO_URI: mongodb://mongodb:27017/
     depends_on:
       mongodb:
         condition: service_started
