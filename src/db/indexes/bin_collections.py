@@ -1,8 +1,8 @@
 from db.database import database
 from db.create_index import create_index
 
-def set_up_gcc_bin_collections_index():
-  collection = database['gcc_bin_collections']
+def set_up_bin_collections_index():
+  collection = database['bin_collections']
 
   create_index(
     collection,
@@ -10,4 +10,4 @@ def set_up_gcc_bin_collections_index():
     'bin_colours_index'
   )
 
-__all__ = ['gcc_bin_collections']
+__all__ = ['set_up_bin_collections_index']
