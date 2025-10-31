@@ -17,7 +17,7 @@ Python
 
 ## Environment variables
 
-The following environment variables are used by this project for local development.
+The following environment variables are used by this project for local development. Variables not required are provided a default value in the Docker Compose configuration. Variables that are required must be defined in the `.env` file.
 
 | Variable | Required (yes/no) | Description |
 |----------|-------------------|-------------|
@@ -27,7 +27,7 @@ The following environment variables are used by this project for local developme
 | `SMTP_PORT` | No | Port to bind for `SMTP_SERVER`. |
 | `GMAIL_APP_PASSWORD`*** | Yes| App password that allows to authenticate email sent as automated reminders from this application. |
 | `SENDER_EMAIL_ADDRESS` | Yes | Email address of the sender. |
-| `RECIPIENT_EMAIL_ADDRESS | Yes | Email address of the recipient. |
+| `RECIPIENT_EMAIL_ADDRESS` | Yes | Email address of the recipient. |
 
 *[FindMyAddress](https://www.findmyaddress.co.uk/search) can be used to find out your UPRN.  
 **For your own personal use, you should change this if you intend to use the app with a different email provider e.g. Outlook.  
