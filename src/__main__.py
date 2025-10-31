@@ -5,8 +5,6 @@ def main():
 
   data = scraper()
 
-  print('Finished scraping.')
-
   for item in data:
     print(item)
 
