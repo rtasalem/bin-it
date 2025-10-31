@@ -17,53 +17,21 @@ Python
 
 ## Environment variables
 
-The following environment variables are used by this project for local development _within a Docker container_.
+The following environment variables are used by this project for local development.
 
 | Variable | Required (yes/no) | Description |
 |----------|-------------------|-------------|
-| `UPRN` | Yes | UPRN* (or Unique Property Reference Number) is a unique numeric identifier tied to _your_ home address. Bin collection days varies across Glasgow, your UPRN will ensure you get notifications with the correct bin collection dates. |
+| `UPRN`* | Yes | UPRN (or Unique Property Reference Number) is a unique numeric identifier tied to _your_ home address. Bin collection days varies across Glasgow, your UPRN will ensure you get notifications with the correct bin collection dates. |
 | `MONGO_URI` | No | Connection string to enable client to connect to database. |
 
 *[FindMyAddress](https://www.findmyaddress.co.uk/search) can be used to find out your UPRN.
 
 ## Local development
 
-### Create virtual environment
+It is highly encouraged to run this application using Docker for local development since:
 
-This application can be ran locally on the host machine. First a virtual environment must be created:
-
-```
-python -m venv venv # for some the correct command may be python3
-```
-
-Once created, activate the virtual environment:
-
-```
-source venv/bin/activate
-```
-
-### Install dependencies
-
-All required dependencies are listed in and available at [`requirements.txt`](/requirements.txt). Dependencies must be installed prior to running the app:
-
-```
-pip install -r requirements.txt # for some the correct command may be pip3
-```
-
-### Starting the application
-
-Start the application:
-
-```
-python src/__main__.py
-```
-
-## Docker
-
-It is encouraged to run this application using Docker for local development since:
-
-- Docker containers act as a virtual environment, removing the need to manually create the environment as demonstrated above.
-- Default, non-sensitive environment variables are set in the base [Docker Compose configuration](/compose.yaml), removing the need to store and maintain as many values in a `.env` file. 
+- Docker containers act as a virtual environment, removing the need to manually create the virtual environment (`venv`).
+- Default, non-sensitive environment variables are set in the base [Docker Compose configuration](/compose.yaml), removing the need to store and maintain as many values in the `.env` file. 
 
 Build the container:
 
