@@ -54,7 +54,9 @@ Start the container:
 docker compose up
 ```
 
-## MongoDB Indexes
+## MongoDB
+
+### Indexes
 
 To ensure efficient query performance, the following indexes have been set up:
 
@@ -69,3 +71,7 @@ To ensure efficient query performance, the following indexes have been set up:
 > As the application  
 > I want to routinely query the database by `date`  
 > So that I can alert users when a bin collection is due the next day.
+
+### Local database usage
+
+For local development, it is recommended to use [MongoDB Compass](https://www.mongodb.com/products/tools/compass) to view and query the database.
