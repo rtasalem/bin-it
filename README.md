@@ -62,15 +62,15 @@ To ensure efficient query performance, the following indexes have been set up:
 
 - `bin_colours_index`: intended for more general querying to check future dates of specific bin colours.
 
-> As a user  
-> I want to occasionally query the database by `bin_colours`  
-> So that I have the option to check future collection dates based on a specific `bin_colours`.
+> **As a** user  
+> **I want** to occasionally query the database by `bin_colours`  
+> **So that** I have the option to check future collection dates based on a specific `bin_colours`.
 
 - `date_index`: intended for use by the application itself when running cron jobs to check and send alerts when a bin collection is due.
 
-> As the application  
-> I want to routinely query the database by `date`  
-> So that I can alert users when a bin collection is due the next day.
+> **As the** application  
+> **I want** to routinely query the database by `date`  
+> **So that** I can alert users when a bin collection is due the next day.
 
 ### Local database usage
 
