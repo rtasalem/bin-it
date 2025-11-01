@@ -1,5 +1,5 @@
 # Bin It! 🗑️
-Scrape the [Glasgow City Council Refuse and Recycling Calendar](https://www.glasgow.gov.uk/article/1524/Bin-Collection-Days) and send out notification reminders the day before a bin collection is due that includes which bins are being collected:  
+Python application that scrapes the [Glasgow City Council Refuse and Recycling Calendar](https://www.glasgow.gov.uk/article/1524/Bin-Collection-Days) and sends out notification reminders the day before a bin collection is due that includes which bins are being collected:  
 
 💙 Blue - Paper, card, cardboard  
 🤎 Brown - Food and garden waste  
@@ -74,4 +74,4 @@ To ensure efficient query performance, the following indexes are created on data
 
 ### Local database usage
 
-For local development, it is recommended to use [MongoDB Compass](https://www.mongodb.com/products/tools/compass) to view and query the database.
+For local development it is recommended to use [MongoDB Compass](https://www.mongodb.com/products/tools/compass) to view and query the database.
