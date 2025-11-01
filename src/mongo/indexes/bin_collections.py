@@ -10,4 +10,10 @@ def set_up_bin_collections_index():
     'bin_colours_index'
   )
 
+  create_index(
+    collection,
+    [('data.date', 1)],
+    'date_index'
+  )
+
 __all__ = ['set_up_bin_collections_index']
