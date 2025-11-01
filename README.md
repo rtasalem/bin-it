@@ -58,7 +58,7 @@ docker compose up
 
 ### Indexes
 
-To ensure efficient query performance, the following indexes have been set up:
+To ensure efficient query performance, the following indexes are created on database startup:
 
 - `bin_colours_index`: intended for more general querying to check future dates of specific bin colours.
 
