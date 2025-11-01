@@ -1,5 +1,5 @@
 # Bin It! 🗑️
-Scrape the [Glasgow City Council Refuse and Recycling Calendar](https://www.glasgow.gov.uk/article/1524/Bin-Collection-Days) and send out notification reminders the day before a bin collection is due that includes which bins are being collected:  
+Python application that scrapes the [Glasgow City Council Refuse and Recycling Calendar](https://www.glasgow.gov.uk/article/1524/Bin-Collection-Days) and sends out notification reminders the day before a bin collection is due that includes which bins are being collected:  
 
 💙 Blue - Paper, card, cardboard  
 🤎 Brown - Food and garden waste  
@@ -53,3 +53,25 @@ Start the container:
 ```
 docker compose up
 ```
+
+## MongoDB
+
+### Indexes
+
+To ensure efficient query performance, the following indexes are created on database startup:
+
+- `bin_colours_index`: intended for more general querying to check future dates of specific bin colours.
+
+> **As a** user  
+> **I want** to occasionally query the database by `bin_colours`  
+> **So that** I have the option to check future collection dates based on a specific `bin_colours`.
+
+- `date_index`: intended for use by the application itself when running cron jobs to check and send alerts when a bin collection is due.
+
+> **As the** application  
+> **I want** to routinely query the database by `date`  
+> **So that** I can alert users when a bin collection is due the next day.
+
+### Local database usage
+
+For local development it is recommended to use [MongoDB Compass](https://www.mongodb.com/products/tools/compass) to view and query the database.

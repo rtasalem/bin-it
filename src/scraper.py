@@ -23,7 +23,7 @@ def scraper():
     parsed_date = parse_date(raw_date)
 
     imgs = collection_date.find_all('img')
-    bin_colours = [img.get('title').partition(' ')[0] for img in imgs] if imgs else 'No bins due for collection'
+    bin_colours = [img.get('title').partition(' ')[0] for img in imgs] if imgs else 'None'
 
     item = {
       'data': {
