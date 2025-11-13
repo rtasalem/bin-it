@@ -1,11 +1,11 @@
 # Bin It! 🗑️
 Python application that scrapes the [Glasgow City Council Refuse and Recycling Calendar](https://www.glasgow.gov.uk/article/1524/Bin-Collection-Days) and sends out notification reminders the day before a bin collection is due that includes which bins are being collected:  
 
-💙 Blue - Paper, card, cardboard  
-🤎 Brown - Food and garden waste  
-💚 Green - General non-recyclable household waste  
-🩶 Grey - Plastics, metals, film  
-💜 Purple - Glass  
+🔵 Blue - Paper, card, cardboard  
+🟤 Brown - Food and garden waste  
+🟢 Green - General non-recyclable household waste  
+⚫️ Grey - Plastics, metals, film  
+🟣 Purple - Glass  
 
 For the most up to date information on what waste should go into which bin, refer to the Glasgow City Council article: [_What goes in your bin?_](https://www.glasgow.gov.uk/article/13729/What-goes-in-your-bin)
 

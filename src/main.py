@@ -13,9 +13,6 @@ def main():
   set_up_bin_collections_index()
   save_scraped_data()
 
-  sender = os.getenv('SENDER_EMAIL_ADDRESS')
-  recipient = os.getenv('RECIPIENT_EMAIL_ADDRESS')
-
   send_email_reminder('test', 'hello world', sender, recipient)
 
 if __name__ == '__main__':
