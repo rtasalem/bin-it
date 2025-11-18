@@ -21,7 +21,6 @@ services:
         condition: service_started
     volumes:
       - ./:/bin-it
-      - ./requirements.txt:/bin-it/requirements.txt
     networks:
       - bin-it
 
