@@ -15,13 +15,35 @@ services:
       SENDER_EMAIL_ADDRESS: ${SENDER_EMAIL_ADDRESS}
       RECIPIENT_EMAIL_ADDRESS: ${RECIPIENT_EMAIL_ADDRESS}
     depends_on:
+      ntfy:
+        condition: service_healthy
       mongodb:
         condition: service_started
     volumes:
-      - ./src:/bin-it/src
-      - ./requirements.txt:/bin-it/requirements.txt
+      - ./:/bin-it
     networks:
       - bin-it
+
+  ntfy:
+    image: binwiederhier/ntfy
+    container_name: ntfy
+    command:
+      - serve
+    environment:
+      - TZ=Europe/London
+    volumes:
+      - /var/cache/ntfy:/var/cache/ntfy
+      - /etc/ntfy:/etc/ntfy
+    ports:
+      - 80:80
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --tries=1 http://localhost:80/v1/health -O - | grep -Eo '\"healthy\"\\s*:\\s*true' || exit 1"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+    init: true
 
   mongodb:
     image: mongo:latest

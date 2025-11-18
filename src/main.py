@@ -1,7 +1,8 @@
-from mongo.indexes.bin_collections import set_up_bin_collections_index
-from data.save_scraped_data import save_scraped_data
+import time
 import os
 from dotenv import load_dotenv
+from mongo.indexes.bin_collections import set_up_bin_collections_index
+from data.save_scraped_data import save_scraped_data
 
 def main():
   load_dotenv()
@@ -10,6 +11,9 @@ def main():
 
   set_up_bin_collections_index()
   save_scraped_data()
+
+  while True:
+    time.sleep(1)
 
 if __name__ == '__main__':
   main()
