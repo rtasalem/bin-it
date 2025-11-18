@@ -2,3 +2,4 @@ beautifulsoup4==4.14.2
 python-dotenv==1.1.1
 requests==2.32.5
 pymongo==4.15.3
+watchdog[watchmedo]==6.0.0
