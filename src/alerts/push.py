@@ -18,8 +18,8 @@ def send_push_notification_alert(collection_date, bin_colours):
     f'https://ntfy.sh/{topic}',
     data=message.encode(encoding='utf-8'),
     headers={
-      Title: 'BIN COLLECTION DUE TOMORROW!',
-      tags: 'put_litter_in_its_place'
+      'Title': 'BIN COLLECTION DUE TOMORROW!',
+      'tags': 'put_litter_in_its_place'
     }
   )
 

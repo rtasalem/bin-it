@@ -7,7 +7,11 @@ def test_send_push_notification():
 
   response = requests.post(
     f'https://ntfy.sh/{topic}',
-    data=message.encode(encoding='utf-8')
+    data=message.encode(encoding='utf-8'),
+    headers={
+      'Title': 'Test',
+      'Tags': 'warning'
+    }
   )
 
   print('Push notification has been sent')
