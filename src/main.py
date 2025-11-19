@@ -3,6 +3,7 @@ import os
 from dotenv import load_dotenv
 from mongo.indexes.bin_collections import set_up_bin_collections_index
 from data.save_scraped_data import save_scraped_data
+from constants.emoji_bin_colours import emoji_bin_colours
 
 def main():
   load_dotenv()
