@@ -1,5 +1,6 @@
 import os
 from dotenv import load_dotenv
+from datetime import datetime
 import smtplib 
 from email.mime.text import MIMEText
 from utils.format_bin_colours import format_bin_colours
@@ -11,8 +12,10 @@ def send_email_alert(collection_date, bin_colours):
   emojis = render_emoji_colours(bin_colours)
   colours = format_bin_colours(bin_colours)
 
+  collection_date_str = datetime.strptime(collection_date, "%Y-%m-%d").strftime("%d-%m-%Y")
+
   body = (
-    f'{emojis} The {colours} bin will be collected tomorrow ({collection_date}).'
+    f'{emojis} The {colours} bin will be collected tomorrow ({collection_date_str}).'
   )
 
   sender = os.getenv('SENDER_EMAIL_ADDRESS')
