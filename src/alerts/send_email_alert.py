@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 import smtplib 
 from email.mime.text import MIMEText
-import format_bin_colours from utils.format_bin_colours
+from utils.format_bin_colours import format_bin_colours
 
 def send_email_alert(collection_date, bin_colours):
   load_dotenv()
