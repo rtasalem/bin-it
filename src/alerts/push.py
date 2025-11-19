@@ -16,7 +16,11 @@ def send_push_notification_alert(collection_date, bin_colours):
 
   response = requests.post(
     f'https://ntfy.sh/{topic}',
-    data=message.encode(encoding='utf-8')
+    data=message.encode(encoding='utf-8'),
+    headers={
+      Title: 'BIN COLLECTION DUE TOMORROW!',
+      tags: 'put_litter_in_its_place'
+    }
   )
 
   print('📱 Push notification alert successfully sent')
