@@ -14,6 +14,7 @@ services:
       GMAIL_APP_PASSWORD: ${GMAIL_APP_PASSWORD}
       SENDER_EMAIL_ADDRESS: ${SENDER_EMAIL_ADDRESS}
       RECIPIENT_EMAIL_ADDRESS: ${RECIPIENT_EMAIL_ADDRESS}
+      NTFY_ALERTS_TOPIC: bin-it-alerts
     depends_on:
       ntfy:
         condition: service_healthy

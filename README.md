@@ -29,7 +29,7 @@ The following environment variables are used by this project for local developme
 | `SENDER_EMAIL_ADDRESS` | Yes | Email address of the sender. |
 | `RECIPIENT_EMAIL_ADDRESS` | Yes | Email address of the recipient. |
 
-*[FindMyAddress](https://www.findmyaddress.co.uk/search) can be used to find out your UPRN.  
+*[FindMyAddress](https://www.findmyaddress.co.uk/search) can be used to find out your UPRN, this is a *sensitive* value directly tied to your personal address. **Do not** publicly expose this variable.
 
 **For your own personal use, you should change this if you intend to use the app with a different email provider e.g. Outlook.  
 

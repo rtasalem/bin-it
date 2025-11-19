@@ -30,6 +30,6 @@ def send_email_alert(collection_date, bin_colours):
     smtp_server.login(sender, password)
     smtp_server.sendmail(sender, recipient, msg.as_string())
 
-  print('✅ Email alert successfully sent')
+  print('✉️ Email alert successfully sent')
 
 __all__ = ['send_emai_alert']
