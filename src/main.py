@@ -2,16 +2,15 @@ import time
 import os
 from dotenv import load_dotenv
 from mongo.indexes.bin_collections import set_up_bin_collections_index
-from data.save_scraped_data import save_scraped_data
-from constants.emoji_bin_colours import emoji_bin_colours
+from alerts.check_and_alert import check_and_alert
+from mongo.update_database import update_database
 
 def main():
   load_dotenv()
 
-  print('🗑️ Starting scraper...')
-
   set_up_bin_collections_index()
-  save_scraped_data()
+  update_database()
+  check_and_alert()
 
   while True:
     time.sleep(1)
