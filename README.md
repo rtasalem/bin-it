@@ -36,6 +36,27 @@ The following environment variables are used by this project for local developme
 
 ***Similar to the `SMTP_SERVER`, the app password should be generated from the email provider you intend to use. Typically, 2FA needs to be enabled before generating an app password.
 
+## Processing flow
+
+```mermaid
+sequenceDiagram
+  participant GCC as Glasgow City Council
+  participant APP as Bin It!
+  participant MONGODB as MongoDB
+  participant USER as User
+
+  loop Every 1st day of the month at midnight
+    APP->>GCC: Scrape (with UPRN)
+    APP->>MONGODB: Delete data for previous month and store newly scraped data
+  end
+
+  loop Send reminder every Tuesday & Wednesday at middday
+    APP->>MONGODB: Check document with date matching tomorrow's date for bin collections
+    MONGODB-->>APP: Retrieve bin colours for tomorrow's collections
+    APP->>USER: Format and send user email reminder
+  end
+```
+
 ## Local development
 
 It is highly encouraged to run this application using Docker for local development since:
@@ -54,7 +75,7 @@ Start the container:
 ```
 docker compose up
 ```
- 
+
 ## MongoDB
 
 ### Indexes
