@@ -45,12 +45,12 @@ sequenceDiagram
   participant MONGODB as MongoDB
   participant USER as User
 
-  loop Every 1st day of the month at midnight
+  loop Every 1st of the month at midnight
     APP->>GCC: Scrape (with UPRN)
     APP->>MONGODB: Delete data for previous month and store newly scraped data
   end
 
-  loop Send reminder every Tuesday & Wednesday at middday
+  loop Every Tuesday & Wednesday at middday
     APP->>MONGODB: Check document with date matching tomorrow's date for bin collections
     MONGODB-->>APP: Retrieve bin colours for tomorrow's collections
     APP->>USER: Format and send user email reminder
