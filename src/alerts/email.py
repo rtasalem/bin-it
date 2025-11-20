@@ -4,12 +4,12 @@ from datetime import datetime
 import smtplib 
 from email.mime.text import MIMEText
 from utils.format_bin_colours import format_bin_colours
-from utils.render_emoji_colours import render_emoji_colours
+from utils.render_emojis import render_bin_colour_emojis
 
 def send_email_alert(collection_date, bin_colours):
   load_dotenv()
 
-  emojis = render_emoji_colours(bin_colours)
+  emojis = render_bin_colour_emojis(bin_colours)
   colours = format_bin_colours(bin_colours)
 
   collection_date_str = datetime.strptime(collection_date, "%Y-%m-%d").strftime("%d-%m-%Y")
@@ -22,7 +22,7 @@ def send_email_alert(collection_date, bin_colours):
   recipient = os.getenv('RECIPIENT_EMAIL_ADDRESS')
 
   msg = MIMEText(body)
-  msg['Subject'] = '🚮 BIN COLLECTION DUE TOMORROW!'
+  msg['Subject'] = '⚠️ Bin collection due tomorrow!'
   msg['From'] = sender
   msg['To'] = recipient
 
@@ -35,6 +35,6 @@ def send_email_alert(collection_date, bin_colours):
     smtp_server.login(sender, password)
     smtp_server.sendmail(sender, recipient, msg.as_string())
 
-  print('✅ Email alert successfully sent')
+  print('✉️ Email alert successfully sent')
 
-__all__ = ['send_emai_alert']
+__all__ = ['send_email_alert']
