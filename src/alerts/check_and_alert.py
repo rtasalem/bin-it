@@ -10,6 +10,6 @@ def check_and_alert():
     date, bin_colours = result
     send_email_alert(date, bin_colours)
   else:
-    print('No bin collections due tomorrow')
+    print('🗑️ No bin collections due tomorrow')
 
 __all__ = ['check_and_alert']
