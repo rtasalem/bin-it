@@ -10,7 +10,7 @@ def parse_date(raw_date: str):
   try:  
     parsed_date = datetime.strptime(clean_date, '%A, %d %B %Y')
 
-    return parsed_date.strftime('%d-%m-%Y')
+    return parsed_date.strftime('%Y-%m-%d')
   except ValueError:
     return None
 

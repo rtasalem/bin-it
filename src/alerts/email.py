@@ -1,23 +1,28 @@
 import os
 from dotenv import load_dotenv
+from datetime import datetime
 import smtplib 
 from email.mime.text import MIMEText
-import format_bin_colours from utils.format_bin_colours
+from utils.format_bin_colours import format_bin_colours
+from utils.render_emoji_colours import render_emoji_colours
 
 def send_email_alert(collection_date, bin_colours):
   load_dotenv()
 
+  emojis = render_emoji_colours(bin_colours)
   colours = format_bin_colours(bin_colours)
 
+  collection_date_str = datetime.strptime(collection_date, "%Y-%m-%d").strftime("%d-%m-%Y")
+
   body = (
-    f'The {colours} bin will be collected tomorrow ({collection_date}).'
+    f'{emojis} The {colours} bin will be collected tomorrow ({collection_date_str}).'
   )
 
   sender = os.getenv('SENDER_EMAIL_ADDRESS')
   recipient = os.getenv('RECIPIENT_EMAIL_ADDRESS')
 
   msg = MIMEText(body)
-  msg['Subject'] = 'BIN COLLECTION DUE TOMORROW!'
+  msg['Subject'] = '🚮 BIN COLLECTION DUE TOMORROW!'
   msg['From'] = sender
   msg['To'] = recipient
 
