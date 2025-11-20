@@ -1,4 +1,4 @@
-emoji_bin_colours = {
+bin_colour_emojis = {
   'blue': '🔵',
   'brown': '🟤',
   'green': '🟢',

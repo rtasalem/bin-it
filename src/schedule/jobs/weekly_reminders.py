@@ -1,11 +1,11 @@
-from jobs.scheduler import scheduler
-from alerts.check_and_alert import check_and_alert
+from schedule.scheduler import scheduler
+from handle_alerts import handle_bin_collection_alerts
 
 def send_weekly_bin_collection_reminder():
   scheduler.add_job(
-    check_and_alert,
+    handle_bin_collection_alerts,
     trigger='cron',
-    day_of_week='mon-fri',
+    day_of_week='tue,wed',
     hour=12,
     minute=0
   )

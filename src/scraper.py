@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
-from data.parse_date import parse_date
+from utils.parse_date import parse_date
 
 def scraper():
   load_dotenv()

@@ -1,7 +1,7 @@
 from mongo.database import database
 from scraper import scraper
 
-def save_scraped_data():
+def handle_scraped_data():
   collection = database['bin_collections']
   scraped_data = scraper()
 
@@ -11,4 +11,4 @@ def save_scraped_data():
   else:
     print('No data available')
 
-__all__ = ['save_scraped_data']
+__all__ = ['handle_scraped_data']

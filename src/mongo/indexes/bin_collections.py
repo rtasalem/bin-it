@@ -1,7 +1,7 @@
 from mongo.database import database
 from mongo.create_index import create_index
 
-def set_up_bin_collections_index():
+def setup_bin_collections_index():
   collection = database['bin_collections']
 
   create_index(
@@ -16,4 +16,4 @@ def set_up_bin_collections_index():
     'date_index'
   )
 
-__all__ = ['set_up_bin_collections_index']
+__all__ = ['setup_bin_collections_index']
