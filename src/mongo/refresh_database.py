@@ -7,6 +7,9 @@ def refresh_database():
   tomorrow = tomorrows_date()
 
   delete_all_documents(tomorrow)
+
+  print(f'🧹 Data for last month has been cleared')
+
   handle_scraped_data()
 
   now = datetime.now()
