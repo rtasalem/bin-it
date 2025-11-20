@@ -1,4 +1,4 @@
-# Bin It! 🗑️
+# Bin It! 🚮
 
 Python application that scrapes the [Glasgow City Council Refuse and Recycling Calendar](https://www.glasgow.gov.uk/article/1524/Bin-Collection-Days) and sends out email alerts the day before a bin collection is due, including which bins are being collected:  
 
@@ -51,7 +51,7 @@ sequenceDiagram
   end
 
   loop Every Tuesday & Wednesday at middday
-    APP->>MONGODB: Check document with date matching tomorrow's date for bin collections
+    APP->>MONGODB: Check if bin collections are due tomorrow
     MONGODB-->>APP: Retrieve bin colours for tomorrow's collections
     APP->>USER: Format and send user email reminder
   end
