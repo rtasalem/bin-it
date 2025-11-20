@@ -1,5 +1,6 @@
 # Bin It! 🗑️
-Python application that scrapes the [Glasgow City Council Refuse and Recycling Calendar](https://www.glasgow.gov.uk/article/1524/Bin-Collection-Days) and sends out notification reminders the day before a bin collection is due that includes which bins are being collected:  
+
+Python application that scrapes the [Glasgow City Council Refuse and Recycling Calendar](https://www.glasgow.gov.uk/article/1524/Bin-Collection-Days) and sends out email alerts the day before a bin collection is due, including which bins are being collected:  
 
 🔵 Blue - Paper, card, cardboard  
 🟤 Brown - Food and garden waste  
@@ -19,13 +20,13 @@ Python
 
 The following environment variables are used by this project for local development. Variables not required are provided a default value in the Docker Compose configuration. Variables that are required must be defined in the `.env` file.
 
-| Variable | Required (yes/no) | Description |
-|----------|-------------------|-------------|
+| Variable | Required | Description |
+|----------|----------|-------------|
 | `UPRN`* | Yes | UPRN (or Unique Property Reference Number) is a unique numeric identifier tied to _your_ home address. Bin collection days varies across Glasgow, your UPRN will ensure you get notifications with the correct bin collection dates. |
 | `MONGO_URI` | No | Connection string to enable client to connect to database. |
-| `SMTP_SERVER`** | No | Server definition based on email address being used for `sender` and `recipient`. In this case, it's Gmail. |
+| `SMTP_SERVER`** | No | Server definition based on email address being used for `sender`. |
 | `SMTP_PORT` | No | Port to bind for `SMTP_SERVER`. |
-| `GMAIL_APP_PASSWORD`*** | Yes| App password that allows to authenticate email sent as automated reminders from this application. |
+| `GMAIL_APP_PASSWORD`*** | Yes| App password to authenticate `sender` email sent as automated reminders from this application. |
 | `SENDER_EMAIL_ADDRESS` | Yes | Email address of the sender. |
 | `RECIPIENT_EMAIL_ADDRESS` | Yes | Email address of the recipient. |
 
@@ -53,7 +54,7 @@ Start the container:
 ```
 docker compose up
 ```
-
+ 
 ## MongoDB
 
 ### Indexes
@@ -64,7 +65,7 @@ To ensure efficient query performance, the following indexes are created on data
 
 > **As a** user  
 > **I want** to occasionally query the database by `bin_colours`  
-> **So that** I have the option to check future collection dates based on a specific `bin_colours`.
+> **So that** I have the option to check future collection dates based on specific `bin_colours`.
 
 - `date_index`: intended for use by the application itself when running cron jobs to check and send alerts when a bin collection is due.
 
