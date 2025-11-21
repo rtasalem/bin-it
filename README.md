@@ -26,9 +26,9 @@ The following environment variables are used by this project for local developme
 | `MONGO_URI` | No | Connection string to enable client to connect to database. |
 | `SMTP_SERVER`** | No | Server definition based on email address being used for `sender`. |
 | `SMTP_PORT` | No | Port to bind for `SMTP_SERVER`. |
-| `GMAIL_APP_PASSWORD`*** | Yes| App password to authenticate `sender` email sent as automated reminders from this application. |
-| `SENDER_EMAIL_ADDRESS` | Yes | Email address of the sender. |
-| `RECIPIENT_EMAIL_ADDRESS` | Yes | Email address of the recipient. |
+| `APP_PASSWORD`*** | Yes| App password to authenticate `sender` email sent as automated reminders from this application. |
+| `SENDER` | Yes | Email address of the sender. |
+| `RECIPIENT` | Yes | Email address of the recipient. |
 
 *[FindMyAddress](https://www.findmyaddress.co.uk/search) can be used to find out your UPRN.  
 
