@@ -1,6 +1,4 @@
-from apscheduler.schedulers.background import BackgroundScheduler
+from apscheduler.schedulers.background import BlockingScheduler
 
 def create_scheduler():
-  scheduler = BackgroundScheduler()
-  
-  return scheduler
+  return BlockingScheduler()
