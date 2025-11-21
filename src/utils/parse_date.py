@@ -13,5 +13,3 @@ def parse_date(raw_date: str):
     return parsed_date.strftime('%Y-%m-%d')
   except ValueError:
     return None
-
-__all__ = ['parse_date']

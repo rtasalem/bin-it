@@ -6,5 +6,3 @@ load_dotenv()
 
 uri = os.getenv('MONGO_URI')
 client = MongoClient(uri)
-
-__all__ = ['client']

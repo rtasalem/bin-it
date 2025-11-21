@@ -10,5 +10,3 @@ def execute_monthly_database_refresh():
     minute=0,
     second=0
   )
-
-__all__ = ['execute_monthly_database_update']

@@ -11,5 +11,3 @@ def handle_bin_collection_alerts():
     send_email_alert(date, bin_colours)
   else:
     print('🗑️ No bin collections due tomorrow')
-
-__all__ = ['handle_bin_collection_alerts']

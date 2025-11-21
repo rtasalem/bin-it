@@ -8,5 +8,3 @@ def create_index(collection, params, index_name, unique=False):
   )
 
   print(f'🍃 MongoDB index has been created: {index_name}')
-
-__all__ = ['create_index']

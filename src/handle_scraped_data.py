@@ -10,5 +10,3 @@ def handle_scraped_data():
     print(f'💾 {len(scraped_data)} documents have been saved into bin_collections')
   else:
     print('No data available')
-
-__all__ = ['handle_scraped_data']

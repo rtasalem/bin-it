@@ -9,5 +9,3 @@ def send_weekly_bin_collection_reminder():
     hour=12,
     minute=0
   )
-
-__all__ = ['send_weekly_bin_collection_reminder']

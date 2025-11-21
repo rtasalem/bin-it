@@ -6,5 +6,3 @@ def render_bin_colour_emojis(bin_colours):
   output = ''.join(result_emojis)
 
   return output
-
-__all__ = ['render_bin_colour_emojis']

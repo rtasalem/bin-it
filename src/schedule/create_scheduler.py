@@ -4,5 +4,3 @@ def create_scheduler():
   scheduler = BackgroundScheduler()
   
   return scheduler
-
-__all__ = ['create_scheduler']

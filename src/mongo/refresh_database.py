@@ -17,5 +17,3 @@ def refresh_database():
   current_year = now.year
 
   print(f'📅 Database has been refreshed and updated for {current_month} {current_year}')
-
-__all__ = ['refresh_database']
