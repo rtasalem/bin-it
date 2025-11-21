@@ -1,9 +1,9 @@
 Dockerfile
 compose.yaml
 README.md
-.git
+.git/
 .gitignore
-.vscode
+.vscode/
 .DS_Store
 __pycache__/
 *.pyc
