@@ -8,4 +8,3 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 CMD ["watchmedo", "auto-restart", "--patterns=*.py", "--ignore-patterns=*.txt;*.env;*.json;*.log;*.db;*.pyc;__pycache__/*;*/__pycache__/*", "--recursive", "--debug", "--debug-force-polling", "--", "python", "src/main.py"]
-

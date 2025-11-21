@@ -15,5 +15,3 @@ def setup_bin_collections_index():
     [('data.date', 1)],
     'date_index'
   )
-
-__all__ = ['setup_bin_collections_index']
