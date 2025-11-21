@@ -34,7 +34,7 @@ The following environment variables are used by this project for local developme
 
 **For your own personal use, you should change this if you intend to use the app with a different email provider e.g. Outlook.  
 
-## Processing flow
+## Application overview
 
 ```mermaid
 sequenceDiagram
