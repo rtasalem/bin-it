@@ -26,8 +26,7 @@ def send_email_alert(collection_date, bin_colours):
   msg['From'] = sender
   msg['To'] = recipient
 
-  # password = os.getenv('GMAIL_APP_PASSWORD')
-  password = os.getenv('OUTLOOK_APP_PASSWORD')
+  password = os.getenv('GMAIL_APP_PASSWORD')
   server = os.getenv('SMTP_SERVER')
   port = os.getenv('SMTP_PORT')
 
