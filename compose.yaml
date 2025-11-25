@@ -11,9 +11,9 @@ services:
       MONGO_URI: mongodb://mongodb:27017/
       SMTP_SERVER: smtp.gmail.com
       SMTP_PORT: 587
-      GMAIL_APP_PASSWORD: ${GMAIL_APP_PASSWORD}
-      SENDER_EMAIL_ADDRESS: ${SENDER_EMAIL_ADDRESS}
-      RECIPIENT_EMAIL_ADDRESS: ${RECIPIENT_EMAIL_ADDRESS}
+      GMAIL_APP_PASSWORD: ${APP_PASSWORD}
+      SENDER_EMAIL_ADDRESS: ${SENDER}
+      RECIPIENT_EMAIL_ADDRESS: ${RECIPIENT}
     depends_on:
       mongodb:
         condition: service_started
