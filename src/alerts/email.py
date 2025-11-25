@@ -18,15 +18,15 @@ def send_email_alert(collection_date, bin_colours):
     f'{emojis} The {colours} bin will be collected tomorrow ({collection_date_str}).'
   )
 
-  sender = os.getenv('SENDER_EMAIL_ADDRESS')
-  recipient = os.getenv('RECIPIENT_EMAIL_ADDRESS')
+  sender = os.getenv('SENDER')
+  recipient = os.getenv('RECIPIENT')
 
   msg = MIMEText(body)
   msg['Subject'] = '⚠️ Bin collection due tomorrow!'
   msg['From'] = sender
   msg['To'] = recipient
 
-  password = os.getenv('GMAIL_APP_PASSWORD')
+  password = os.getenv('APP_PASSWORD')
   server = os.getenv('SMTP_SERVER')
   port = os.getenv('SMTP_PORT')
 
