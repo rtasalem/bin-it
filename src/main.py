@@ -14,7 +14,6 @@ def main():
   handle_scraped_data()
   execute_monthly_database_refresh()
   send_weekly_bin_collection_reminder()
-  handle_bin_collection_alerts()
 
   scheduler.start()
 
