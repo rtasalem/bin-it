@@ -2,9 +2,8 @@ services:
   bin-it:
     build:
       context: .
+      target: production
     container_name: bin-it
-    ports:
-      - "8080:8080"
     environment:
       PYTHONUNBUFFERED: 1
       UPRN: ${UPRN}
@@ -17,25 +16,6 @@ services:
     depends_on:
       mongodb:
         condition: service_started
-    volumes:
-      - ./:/bin-it
-    networks:
-      - bin-it
 
   mongodb:
     image: mongo:latest
-    container_name: bin-it-mongo
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongodb-data:/data
-    networks:
-      - bin-it
-
-volumes:
-  mongodb-data:
-
-networks:
-  bin-it:
-    driver: bridge
-    name: bin-it
