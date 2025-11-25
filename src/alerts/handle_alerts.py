@@ -6,8 +6,10 @@ def handle_bin_collection_alerts():
   tomorrow = tomorrows_date()
   result = check_bin_collections(tomorrow)
 
+  convertedDate = tomorrow.strftime('%d-%m-%Y')
+
   if result:
     date, bin_colours = result
     send_email_alert(date, bin_colours)
   else:
-    print('🗑️ No bin collections due tomorrow')
+    print(f'🗑️ No bin collections due tomorrow ({convertedDate})')

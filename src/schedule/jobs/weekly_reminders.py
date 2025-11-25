@@ -1,5 +1,5 @@
 from schedule.scheduler import scheduler
-from handle_alerts import handle_bin_collection_alerts
+from alerts.handle_alerts import handle_bin_collection_alerts
 
 def send_weekly_bin_collection_reminder():
   scheduler.add_job(
