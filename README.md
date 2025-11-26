@@ -14,7 +14,7 @@ Below is an example of the email sent by the application.
 
 ![example email](email.jpg)
 
-*Note that currently, grey bin collection days are _not_ included in the online calendar. No set date has been set as to when the online calendar will be updated to include the grey bin. This means email alerts do not include collection of the grey bin so for the time being please refer to the online calendar (linked above) until further notice.
+*Note that currently, grey bin collection days are _not_ included in the online calendar. No set date has been set as to when the online calendar will be updated to include the grey bin. This means email alerts do not include collection of the grey bin so for the time being please refer to the printed calendar (typically sent out at the start of the year) until further notice.
 
 ## Prerequisites
 
