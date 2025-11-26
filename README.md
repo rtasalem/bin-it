@@ -10,6 +10,10 @@ Python application that scrapes the [Glasgow City Council Refuse and Recycling C
 
 For the most up to date information on what waste should go into which bin, refer to the Glasgow City Council article: [_What goes in your bin?_](https://www.glasgow.gov.uk/article/13729/What-goes-in-your-bin)
 
+Below is an example of the email sent by the application.
+
+![example email](email.jpg)
+
 ## Prerequisites
 
 Docker  
