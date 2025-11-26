@@ -5,7 +5,7 @@ Python application that scrapes the [Glasgow City Council Refuse and Recycling C
 🔵 Blue - Paper, card, cardboard  
 🟤 Brown - Food and garden waste  
 🟢 Green - General non-recyclable household waste  
-⚫️ Grey - Plastics, metals, film  
+⚫️ Grey* - Plastics, metals, film  
 🟣 Purple - Glass  
 
 For the most up to date information on what waste should go into which bin, refer to the Glasgow City Council article: [_What goes in your bin?_](https://www.glasgow.gov.uk/article/13729/What-goes-in-your-bin)
@@ -13,6 +13,8 @@ For the most up to date information on what waste should go into which bin, refe
 Below is an example of the email sent by the application.
 
 ![example email](email.jpg)
+
+*Note that currently, grey bin collection days are _not_ included in the online calendar. No set date has been set as to when the online calendar will be updated to include the grey bin. This means email alerts do not include collection of the grey bin so for the time being please refer to the online calendar (linked above) until further notice.
 
 ## Prerequisites
 
