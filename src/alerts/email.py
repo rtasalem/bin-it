@@ -22,7 +22,7 @@ def send_email_alert(collection_date, bin_colours):
   recipient = os.getenv('RECIPIENT')
 
   msg = MIMEText(body)
-  msg['Subject'] = '⚠️ Bin collection due tomorrow!'
+  msg['Subject'] = '⚠️ Bin collection due tomorrow 🚮'
   msg['From'] = sender
   msg['To'] = recipient
 
