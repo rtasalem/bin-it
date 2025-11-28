@@ -30,7 +30,7 @@ The following environment variables are used by this project for local developme
 |----------|----------|-------------|
 | `UPRN`* | Yes | UPRN (or Unique Property Reference Number) is a unique numeric identifier tied to _your_ home address. Bin collection days varies across Glasgow, your UPRN will ensure you get notifications with the correct bin collection dates. |
 | `MONGO_URI` | No | Connection string to enable client to connect to database. |
-| `ME_CONFIG_MONGODB_URL` | No | Same as `MONGO_URI`, used to connect Mongo Express to the database itself to allow for viewing/query. |
+| `ME_CONFIG_MONGODB_URL` | No | Same as `MONGO_URI`, connects to MongoDB instance to allow for database interactions through GUI accessible via the browser. |
 | `ME_CONFIG_BASICAUTH_USERNAME` | Yes | Mongo Express username for authentication at the application level. |
 | `ME_CONFIG_BASICAUTH_PASSWORD` | Yes | Mongo Express Password for authentication at the application level. |
 | `SMTP_SERVER`** | No | Server definition based on email address being used for `sender`. |
