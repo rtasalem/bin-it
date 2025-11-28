@@ -17,7 +17,5 @@ def main():
 
   scheduler.start()
 
-  print('⚫️ Temporary notice for the grey bins')
-
 if __name__ == '__main__':
   main()
