@@ -1,7 +1,7 @@
 bin_colour_emojis = {
-  'blue': '🔵',
-  'brown': '🟤',
-  'green': '🟢',
-  'grey': '⚫️',
-  'purple': '🟣'
+  'blue': '💙',
+  'brown': '🤎',
+  'green': '💚',
+  'grey': '🩶',
+  'purple': '💜'
 }

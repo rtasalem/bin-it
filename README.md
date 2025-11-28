@@ -2,11 +2,11 @@
 
 Python application that scrapes the [Glasgow City Council Refuse and Recycling Calendar](https://www.glasgow.gov.uk/article/1524/Bin-Collection-Days) and sends out email alerts the day before a bin collection is due, including which bins are being collected:  
 
-🔵 Blue - Paper, card, cardboard  
-🟤 Brown - Food and garden waste  
-🟢 Green - General non-recyclable household waste  
-⚫️ Grey* - Plastics, metals, film  
-🟣 Purple - Glass  
+💙 Blue - Paper, card, cardboard  
+🤎 Brown - Food and garden waste  
+💚 Green - General non-recyclable household waste  
+🩶 Grey* - Plastics, metals, film  
+💜 Purple - Glass  
 
 For the most up to date information on what waste should go into which bin, refer to the Glasgow City Council article: [_What goes in your bin?_](https://www.glasgow.gov.uk/article/13729/What-goes-in-your-bin)
 
@@ -14,7 +14,7 @@ Below is an example of the email sent by the application.
 
 ![example email](email.jpg)
 
-*Note that currently, grey bin collection days are _not_ included in the online calendar. No set date has been set as to when the online calendar will be updated to include the grey bin. This means email alerts do not include collection of the grey bin so for the time being please refer to the printed calendar (typically sent out at the start of the year) until further notice.
+*The grey bin is relatively new and therefore GCC have yet to update the online calendar to include grey bin collection dates. No date has been confirmed for when this is expected to happen. Until further notice, refer to any hard copies of the bin collection calendar (these are typically posted at the start of the year).
 
 ## Prerequisites
 
@@ -30,6 +30,9 @@ The following environment variables are used by this project for local developme
 |----------|----------|-------------|
 | `UPRN`* | Yes | UPRN (or Unique Property Reference Number) is a unique numeric identifier tied to _your_ home address. Bin collection days varies across Glasgow, your UPRN will ensure you get notifications with the correct bin collection dates. |
 | `MONGO_URI` | No | Connection string to enable client to connect to database. |
+| `ME_CONFIG_MONGODB_URL` | No | Same as `MONGO_URI`, connects to MongoDB instance to allow for database interactions through GUI accessible via the browser. |
+| `ME_CONFIG_BASICAUTH_USERNAME` | Yes | Mongo Express username for authentication at the application level. |
+| `ME_CONFIG_BASICAUTH_PASSWORD` | Yes | Mongo Express Password for authentication at the application level. |
 | `SMTP_SERVER`** | No | Server definition based on email address being used for `sender`. |
 | `SMTP_PORT` | No | Port to bind for `SMTP_SERVER`. |
 | `APP_PASSWORD` | Yes| App password to authenticate `sender` email sent as automated reminders from this application. |
@@ -98,6 +101,8 @@ To ensure efficient query performance, the following indexes are created on data
 > **I want** to routinely query the database by `date`  
 > **So that** I can alert users when a bin collection is due the next day.
 
-### Local database usage
+### Database usage
 
-For local development it is recommended to use [MongoDB Compass](https://www.mongodb.com/products/tools/compass) to view and query the database.
+For local development, [MongoDB Compass](https://www.mongodb.com/products/tools/compass) is an official GUI for interacting with MongoDB instances.
+
+Alternatively for local development and in production, a GUI is provided for the application: [`mongo-express`](https://hub.docker.com/_/mongo-express).

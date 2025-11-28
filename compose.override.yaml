@@ -20,6 +20,14 @@ services:
     networks:
       - bin-it
 
+  mongo-express:
+    image: mongo-express:latest
+    container_name: bin-it-mongo-express
+    ports:
+      - '8081:8081'
+    networks:
+      - bin-it
+
 volumes:
   mongodb-data:
 
