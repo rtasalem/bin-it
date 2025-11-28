@@ -21,7 +21,7 @@ services:
     image: mongo:latest
     container_name: bin-it-mongo
 
-  mongodb-express:
+  mongo-express:
     image: mongo-express:latest
     container_name: bin-it-mongo-express
     environment:

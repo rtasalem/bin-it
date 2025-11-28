@@ -20,9 +20,9 @@ services:
     networks:
       - bin-it
 
-  mongodb-express:
+  mongo-express:
     image: mongo-express:latest
-    container_name: bin-it-mongodb-express
+    container_name: bin-it-mongo-express
     ports:
       - '8081:8081'
     networks:
