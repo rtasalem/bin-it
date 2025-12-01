@@ -1,5 +1,5 @@
 # development
-FROM python:3.9-slim as development
+FROM python:3.9-slim AS development
 
 WORKDIR /bin-it
 
@@ -11,7 +11,7 @@ COPY . .
 CMD ["watchmedo", "auto-restart", "--patterns=*.py", "--ignore-patterns=*.txt;*.env;*.json;*.log;*.db;*.pyc;__pycache__/*;*/__pycache__/*", "--recursive", "--debug", "--debug-force-polling", "--", "python", "src/main.py"]
 
 # production
-FROM python:3.9-slim as production
+FROM python:3.9-slim AS production
 
 WORKDIR /bin-it
 
