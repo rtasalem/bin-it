@@ -83,7 +83,7 @@ Start the container:
 docker compose up
 ```
 
-## Production (TBC)
+## Production
 
 To run the production container, first build the container:
 
