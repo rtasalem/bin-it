@@ -1,6 +1,6 @@
 # Bin It! 🚮
 
-Python application that scrapes the [Glasgow City Council Refuse and Recycling Calendar](https://www.glasgow.gov.uk/article/1524/Bin-Collection-Days) and sends out email alerts the day before a bin collection is due, including which bins are being collected:  
+Python application that scrapes the [Glasgow City Council (GCC) Refuse and Recycling Calendar](https://www.glasgow.gov.uk/article/1524/Bin-Collection-Days) and sends out email alerts the day before a bin collection is due, including which bins are being collected:  
 
 💙 Blue - Paper, card, cardboard  
 🤎 Brown - Food and garden waste  
@@ -8,13 +8,13 @@ Python application that scrapes the [Glasgow City Council Refuse and Recycling C
 🩶 Grey* - Plastics, metals, film  
 💜 Purple - Glass  
 
-For the most up to date information on what waste should go into which bin, refer to the Glasgow City Council article: [_What goes in your bin?_](https://www.glasgow.gov.uk/article/13729/What-goes-in-your-bin)
+For the most up to date information on what waste should go into which bin, refer to the GCC article: [_What goes in your bin?_](https://www.glasgow.gov.uk/article/13729/What-goes-in-your-bin)
 
 Below is an example of the email sent by the application.
 
 ![example email](email.jpg)
 
-*The grey bin is relatively new and therefore GCC have yet to update the online calendar to include grey bin collection dates. No date has been confirmed for when this is expected to happen. Until further notice, refer to any hard copies of the bin collection calendar (these are typically posted at the start of the year).
+*The grey bin is relatively new and therefore GCC have yet to update the online calendar to include grey bin collection dates. No date has been confirmed for when this is expected to happen. Until further notice, a [script](#backfill-missing-records) has been provided to backfill any missing/incorrect records. Alternatively, refer to any hard copies of the bin collection calendar (these are typically posted at the start of the year).
 
 ## Prerequisites
 
@@ -73,15 +73,33 @@ It is highly encouraged to run this application using Docker for local developme
 
 Build the container:
 
-```
+```bash
 docker compose build
 ```
 
 Start the container:
 
-```
+```bash
 docker compose up
 ```
+
+## Production (TBC)
+
+To run the production container, first build the container:
+
+```bash
+docker compose build
+```
+
+Start the container:
+
+```bash
+docker compose -f compose.yaml up
+```
+
+## Backfill missing records
+
+TBC
 
 ## MongoDB
 
