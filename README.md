@@ -14,7 +14,7 @@ Below is an example of the email sent by the application.
 
 ![example email](email.jpg)
 
-*The grey bin is relatively new and therefore GCC have yet to update the online calendar to include grey bin collection dates. No date has been confirmed for when this is expected to happen. Until further notice, a [script](#backfill-missing-records) has been provided to backfill any missing/incorrect records. Alternatively, refer to any hard copies of the bin collection calendar (these are typically posted at the start of the year).
+*The grey bin is relatively new and therefore GCC have yet to update the online calendar to include grey bin collection dates. It is possible to [backfill these missing records](#backfill-missing-records). Alternatively, you can refer to a hard copy of your local bin collection calendar (typically sent via post at the start of the year).
 
 ## Prerequisites
 
@@ -99,7 +99,21 @@ docker compose -f compose.yaml up
 
 ## Backfill missing records
 
-TBC
+To backfill or even update the existing database records, a script it available for selecting which collection date needs updating.  
+
+First, open a shell inside the `bin-it` container:
+
+```bash
+docker exec -it bin-it /bin/bash
+```
+
+Run the [`backfill.sh`](./backfill.sh) script:
+
+```bash
+./backfill.sh
+```
+
+Follow the prompts to update as many records as needed.
 
 ## MongoDB
 

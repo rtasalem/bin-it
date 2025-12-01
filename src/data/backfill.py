@@ -1,3 +1,8 @@
+import sys
+import os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from mongo.database import database
 
 def backfill_missing_collection_dates(collection_dates, bin_colours):
@@ -8,7 +13,7 @@ def backfill_missing_collection_dates(collection_dates, bin_colours):
   }
 
   missing_data = {
-    '$set' {
+    '$set': {
       'data.bin_colours': bin_colours
     }
   }
