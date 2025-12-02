@@ -5,7 +5,6 @@ def send_weekly_bin_collection_reminder():
   scheduler.add_job(
     handle_bin_collection_alerts,
     trigger='cron',
-    day_of_week='tue,wed',
     hour=12,
     minute=0
   )
