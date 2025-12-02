@@ -1,0 +1,61 @@
+name: Check Pull Request
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - edited
+      - reopened
+      - synchronize
+      - ready_for_review
+
+  workflow_dispatch:
+
+jobs: 
+  check-pull-request:
+    name: Run pull request checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v5
+
+      - name: Get image version
+        id: get_image_version
+        run: |
+          pip install toml
+          VERSION=$(python -c "import toml; print(toml.load('pyproject.toml')['project']['version'])")
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          echo "Image version: $VERSION"
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Check if image tag exists on Docker Hub
+        id: check_image_tag
+        run: |
+          REPO=${{ vars.DOCKERHUB_USERNAME }}/bin-it
+          TAG=${VERSION}
+
+          echo "Checking Docker Hub for image tag: ${REPO}:${TAG}"
+
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
+            "https://hub.docker.com/v2/repositories/${REPO}/tags/${TAG}/")
+
+          if [ "$STATUS" -eq 200 ]; then
+            echo "Image tag already exists on Docker Hub: $REPO:$TAG"
+            echo "exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "Image tag does not exist on Docker Hub: $REPO:$TAG"
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Fail if version already exists
+        if: steps.check_tag.outputs.exists == 'true'
+        run: |
+          echo "Version already exists on Docker Hub. Bump version in pyproject.toml."
+          exit 1
