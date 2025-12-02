@@ -55,7 +55,7 @@ jobs:
           fi
 
       - name: Fail if version already exists
-        if: steps.check_tag.outputs.exists == 'true'
+        if: steps.check_image_tag.outputs.exists == 'true'
         run: |
           echo "Version already exists on Docker Hub. Bump version in pyproject.toml."
           exit 1
