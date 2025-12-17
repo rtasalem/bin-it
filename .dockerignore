@@ -3,6 +3,7 @@ compose.yaml
 README.md
 .git/
 .gitignore
+.github/
 .vscode/
 .DS_Store
 __pycache__/
