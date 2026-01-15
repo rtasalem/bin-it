@@ -19,12 +19,12 @@ def send_email_alert(collection_date, bin_colours):
   )
 
   sender = os.getenv('SENDER')
-  recipient = os.getenv('RECIPIENT')
+  recipients = os.getenv('RECIPIENT').split(',')
 
   msg = MIMEText(body)
   msg['Subject'] = '⚠️ Bin collection due tomorrow 🚮'
   msg['From'] = sender
-  msg['To'] = recipient
+  msg['To'] = ', '.join(recipients)
 
   password = os.getenv('APP_PASSWORD')
   server = os.getenv('SMTP_SERVER')
@@ -33,6 +33,6 @@ def send_email_alert(collection_date, bin_colours):
   with smtplib.SMTP(server, port) as smtp_server:
     smtp_server.starttls() 
     smtp_server.login(sender, password)
-    smtp_server.sendmail(sender, recipient, msg.as_string())
+    smtp_server.sendmail(sender, recipients, msg.as_string())
 
   print('✉️ Email alert successfully sent')

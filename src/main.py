@@ -6,6 +6,7 @@ from schedule.jobs.monthly_database_refresh import execute_monthly_database_refr
 from schedule.jobs.weekly_reminders import send_weekly_bin_collection_reminder
 from schedule.scheduler import scheduler
 from alerts.handle_alerts import handle_bin_collection_alerts
+from alerts.email import send_email_alert
 
 def main():
   load_dotenv()
@@ -14,6 +15,8 @@ def main():
   handle_scraped_data()
   execute_monthly_database_refresh()
   send_weekly_bin_collection_reminder()
+
+  send_email_alert('2000-01-13', 'blue')
 
   scheduler.start()
 
