@@ -6,7 +6,7 @@ services:
     ports:
       - '8080:8080'
     volumes:
-      - ./src:/bin-it/src
+      - ./:/bin-it
     networks:
       - bin-it
 
