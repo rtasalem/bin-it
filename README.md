@@ -137,4 +137,4 @@ To ensure efficient query performance, the following indexes are created on data
 
 For local development, [MongoDB Compass](https://www.mongodb.com/products/tools/compass) is an official GUI for interacting with MongoDB instances.
 
-Alternatively for local development and in production, a GUI is provided for the application: [`mongo-express`](https://hub.docker.com/_/mongo-express).
+Alternatively for local development and in production, a GUI is provided for the application: [`mongo-express`](https://hub.docker.com/_/mongo-express) which can be accessed at [http://0.0.0.0:8081](http://0.0.0.0:8081)
