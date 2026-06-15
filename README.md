@@ -5,7 +5,7 @@ Python application that scrapes the [Glasgow City Council (GCC) Refuse and Recyc
 💙 Blue - Paper, card, cardboard  
 🤎 Brown - Food and garden waste  
 💚 Green - General non-recyclable household waste  
-🩶 Grey* - Plastics, metals, film  
+🩶 Grey - Plastics, metals, film  
 💜 Purple - Glass  
 
 For the most up to date information on what waste should go into which bin, refer to the GCC article: [_What goes in your bin?_](https://www.glasgow.gov.uk/article/13729/What-goes-in-your-bin)
@@ -13,8 +13,6 @@ For the most up to date information on what waste should go into which bin, refe
 Below is an example of the email sent by the application.
 
 ![example email](email.jpg)
-
-*The grey bin is relatively new and therefore GCC have yet to update the online calendar to include grey bin collection dates. It is possible to [backfill these missing records](#backfill-missing-records). Alternatively, you can refer to a hard copy of your local bin collection calendar (typically sent via post at the start of the year).
 
 ## Prerequisites
 
@@ -96,24 +94,6 @@ Start the container:
 ```bash
 docker compose -f compose.yaml up
 ```
-
-## Backfill missing records
-
-To backfill or even update the existing database records, a script it available for selecting which collection date needs updating.  
-
-First, open a shell inside the `bin-it` container:
-
-```bash
-docker exec -it bin-it /bin/bash
-```
-
-Run the [`backfill.sh`](./backfill.sh) script:
-
-```bash
-./backfill.sh
-```
-
-Follow the prompts to update as many records as needed.
 
 ## MongoDB
 
