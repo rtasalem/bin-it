@@ -36,6 +36,9 @@ The following environment variables are used by this project for local developme
 | `APP_PASSWORD` | Yes| App password to authenticate `sender` email sent as automated reminders from this application. |
 | `SENDER` | Yes | Email address of the sender. |
 | `RECIPIENT` | Yes | Email address of the recipient. |
+| `NTFY_TOPIC_URL` | Yes (if wanting push notifications via ntfy). | Topic URL to receive push notifications. |
+| `ENABLE_EMAIL_ALERTS` | No (default is set to `true`). | Email alerts toggle. |
+| `ENABLE_PUSH_NOTIFICATIONS` | Yes (if wanting to setup ntfy for push notifications, default is set to `false`). | Push notifications toggle. |
 
 *[FindMyAddress](https://www.findmyaddress.co.uk/search) can be used to find out your UPRN.  
 
