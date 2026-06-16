@@ -11,9 +11,6 @@ from alerts.push_notification import send_push_notification
 def main():
   load_dotenv()
 
-  # TODO: remove test notification
-  send_push_notification('2026-06-17', ['blue'])
-
   setup_bin_collections_index()
   handle_scraped_data()
   execute_monthly_database_refresh()
