@@ -14,6 +14,8 @@ services:
       SENDER: ${SENDER}
       RECIPIENT: ${RECIPIENT}
       NTFY_TOPIC_URL: ${NTFY_TOPIC_URL}
+      ENABLE_EMAIL_ALERTS: ${ENABLE_EMAIL_ALERTS:-true}
+      ENABLE_PUSH_NOTIFICATIONS: ${ENABLE_PUSH_NOTIFICATIONS:-false}
     depends_on:
       mongodb:
         condition: service_started
