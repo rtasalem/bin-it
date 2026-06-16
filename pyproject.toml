@@ -2,3 +2,7 @@
 name = "bin-it"
 version = "1.2.0"
 description = "App that scrapes local council bin collection calendar and sends email reminders for when and what colour bins are due for collection."
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

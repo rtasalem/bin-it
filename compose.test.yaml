@@ -1,0 +1,8 @@
+services:
+  test:
+    build:
+      context: .
+      target: test
+    container_name: bin-it-test
+    environment:
+      PYTHONUNBUFFERED: 1
