@@ -13,6 +13,7 @@ services:
       APP_PASSWORD: ${APP_PASSWORD}
       SENDER: ${SENDER}
       RECIPIENT: ${RECIPIENT}
+      NTFY_TOPIC_URL: ${NTFY_TOPIC_URL}
     depends_on:
       mongodb:
         condition: service_started
